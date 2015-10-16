@@ -1,5 +1,4 @@
 // Read an INI file into easy-to-access name/value pairs.
-#include "StdAfx.h"
 #include <cctype>
 #include <cstdlib>
 #include "ini.h"
@@ -37,7 +36,7 @@ string INIReader::MakeKey(string section, string name)
 {
     string key = section + "." + name;
     // Convert to lower case to make lookups case-insensitive
-    for (int i = 0; i < key.length(); i++)
+    for (string::size_type i = 0; i < key.length(); i++)
         key[i] = tolower(key[i]);
     return key;
 }

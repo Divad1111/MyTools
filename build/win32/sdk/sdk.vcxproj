@@ -47,11 +47,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)../../src/sdk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -79,10 +80,26 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\src\sdk\config\ConfigFile.h" />
+    <ClInclude Include="..\..\..\src\sdk\config\ConfigFileMgr.h" />
+    <ClInclude Include="..\..\..\src\sdk\config\IniConfigFile.h" />
+    <ClInclude Include="..\..\..\src\sdk\config\XmlConfigFile.h" />
+    <ClInclude Include="..\..\..\src\sdk\config\XmlParser.h" />
+    <ClInclude Include="..\..\..\src\sdk\externals\ini\ini.h" />
+    <ClInclude Include="..\..\..\src\sdk\externals\ini\INIReader.h" />
+    <ClInclude Include="..\..\..\src\sdk\externals\xml\tinyxml2.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\sdk\config\ConfigFile.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\config\ConfigFileMgr.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\config\IniConfigFile.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\config\XmlConfigFile.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\config\XmlParser.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\externals\ini\ini.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\externals\ini\INIReader.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\externals\xml\tinyxml2.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

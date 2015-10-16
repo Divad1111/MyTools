@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\config">
+      <UniqueIdentifier>{c66bd2f0-5118-4eca-844e-c4b5e1025326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\config\ini">
+      <UniqueIdentifier>{22400f60-6ec8-43ab-b668-a9198ed61408}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\config\xml">
+      <UniqueIdentifier>{3ced47a1-d5fd-423d-82bb-8d2831026b37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -24,6 +33,30 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\externals\ini\ini.h">
+      <Filter>源文件\config\ini</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\externals\ini\INIReader.h">
+      <Filter>源文件\config\ini</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\externals\xml\tinyxml2.h">
+      <Filter>源文件\config\xml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\config\ConfigFile.h">
+      <Filter>源文件\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\config\ConfigFileMgr.h">
+      <Filter>源文件\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\config\IniConfigFile.h">
+      <Filter>源文件\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\config\XmlConfigFile.h">
+      <Filter>源文件\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\config\XmlParser.h">
+      <Filter>源文件\config</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -34,6 +67,30 @@
     </ClCompile>
     <ClCompile Include="dllmain.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\externals\ini\ini.cpp">
+      <Filter>源文件\config\ini</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\externals\ini\INIReader.cpp">
+      <Filter>源文件\config\ini</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\externals\xml\tinyxml2.cpp">
+      <Filter>源文件\config\xml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\config\ConfigFile.cpp">
+      <Filter>源文件\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\config\ConfigFileMgr.cpp">
+      <Filter>源文件\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\config\IniConfigFile.cpp">
+      <Filter>源文件\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\config\XmlConfigFile.cpp">
+      <Filter>源文件\config</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\config\XmlParser.cpp">
+      <Filter>源文件\config</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

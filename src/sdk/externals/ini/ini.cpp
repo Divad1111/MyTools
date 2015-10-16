@@ -6,7 +6,6 @@ home page for more info:
 http://code.google.com/p/inih/
 
 */
-#include "StdAfx.h"
 #include "ini.h"
 
 #include <stdio.h>
