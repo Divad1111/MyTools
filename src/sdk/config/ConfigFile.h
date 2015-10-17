@@ -34,8 +34,8 @@ enum EConfigType
 class ConfigFile
 {
 public:
-    ConfigFile(const std::string& strName, const std::string& strPath)
-        : m_strName(strName), m_strPath(strPath), m_eConfigType(E_UNKNOWN)
+    ConfigFile(const std::string& strName, const std::string& strFilePath)
+        : m_strName(strName), m_strFilePath(strFilePath), m_eConfigType(E_UNKNOWN)
     {
         
     }
@@ -46,11 +46,14 @@ public:
     //比如A:B_2,获取A的第2个子元素B的值
     //比如A:B_2.F,获取A的第2个子元素B的F属性值
     virtual bool GetBool(const std::string& key, bool bDefalut) = 0;
+	virtual void SetBool(const std::string& key, bool bValue) = 0;
     virtual long GetInteger(const std::string& key, long nDefault) = 0;
+	virtual void SetInteger(const std::string& key, long nValue) = 0;
     virtual std::string GetString(const std::string& key, const std::string& strDefault) = 0;
+	virtual void SetString(const std::string& key, const std::string& strValue) = 0;
     
     std::string GetName() {return m_strName;}
-    std::string GetFilePath() {return m_strPath;}
+    std::string GetFilePath() {return m_strFilePath;}
     EConfigType GetType() {return m_eConfigType; }
 
 protected:
@@ -58,7 +61,7 @@ protected:
     StringArray _Split(const std::string& strSource, const char ch);
 private:
     std::string m_strName;
-    std::string m_strPath;
+    std::string m_strFilePath;
     EConfigType m_eConfigType;
 };
 

@@ -13,26 +13,27 @@
 
 #include "ConfigFile.h"
 
-#include "externals\ini\INIReader.h"
 
+class INIReader;
 
 class IniConfigFile : public ConfigFile
 {
 public:
-    IniConfigFile(const std::string& strName, const std::string& strPath):
-        m_oIniReader(strPath), ConfigFile(strName, strPath)
-    {
-        _SetType(E_INI);
-    }
+    IniConfigFile(const std::string& strName, const std::string& strFilePath);
+	virtual ~IniConfigFile();
 
     virtual bool GetBool(const std::string& key, bool bDefalut);
+	virtual void SetBool( const std::string& key, bool bValue );
     virtual long GetInteger(const std::string& key, long nDefault);
+	virtual void SetInteger( const std::string& key, long nValue );
     virtual std::string GetString(const std::string& key, const std::string& strDefault);
+	virtual void SetString( const std::string& key, const std::string& strValue );
 
 private:
+	bool _Init();
     bool _IsValidKey(const StringArray& key);
 private:
-    INIReader   m_oIniReader;
+    INIReader*   m_pIniReader;
 };
 
 #endif//INI_CONFIG_FILE_H_
