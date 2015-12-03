@@ -10,15 +10,20 @@
  **************************************************************/
 #include "IniConfigFile.h"
 
-#include "externals/ini/INIReader.h"
+#include <ini/INIReader.h>
+#include <plog/Log.h>
 
 IniConfigFile::IniConfigFile( const std::string& strName, const std::string& strFilePath ):
 	ConfigFile(strName, strFilePath)
 {	
 	if ( !_Init() )
 	{
-		delete m_pIniReader;
-		m_pIniReader = NULL;
+		if (m_pIniReader != NULL)
+		{
+			delete m_pIniReader;
+			m_pIniReader = NULL;
+		}
+		LOGF<<"Creating IniConfigFile is failed. ";
 	}
 }
 
@@ -65,7 +70,7 @@ bool IniConfigFile::GetBool(const std::string& key, bool bDefalut)
 
 void IniConfigFile::SetBool( const std::string& key, bool bValue )
 {
-
+	LOGE<<"The method or operation is not implemented.";
 }
 
 long IniConfigFile::GetInteger(const std::string& key, long nDefault)
@@ -86,7 +91,7 @@ long IniConfigFile::GetInteger(const std::string& key, long nDefault)
 
 void IniConfigFile::SetInteger( const std::string& key, long nValue )
 {
-
+	LOGE<<"The method or operation is not implemented.";
 }
 
 std::string IniConfigFile::GetString(const std::string& key, const std::string& strDefault)
@@ -107,8 +112,14 @@ std::string IniConfigFile::GetString(const std::string& key, const std::string& 
 
 void IniConfigFile::SetString( const std::string& key, const std::string& strValue )
 {
-
+	LOGE<<"The method or operation is not implemented.";
 }
+
+int IniConfigFile::GetKeyCount( const std::string& key )
+{
+	return 0;
+}
+
 
 bool IniConfigFile::_IsValidKey(const StringArray& key)
 {
@@ -119,3 +130,4 @@ bool IniConfigFile::_IsValidKey(const StringArray& key)
     }
     return true;
 }
+

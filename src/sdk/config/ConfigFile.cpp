@@ -1,6 +1,11 @@
 #include "ConfigFile.h"
 
 
+ConfigFile::~ConfigFile()
+{
+
+}
+
 StringArray ConfigFile::_Split(const std::string& strSource, const char ch)
 {
     StringArray arrRet;

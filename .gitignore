@@ -1,0 +1,13 @@
+*.ipch
+*.opensdf
+*.sdf
+*.suo
+*.tlog
+*.obj
+*.log
+*.lastbuildstate
+*.pch
+*.idb
+*.pdb
+*.unsuccessfulbuild
+/doc/*.md~

@@ -29,6 +29,8 @@ public:
     virtual std::string GetString(const std::string& key, const std::string& strDefault);
 	virtual void SetString( const std::string& key, const std::string& strValue );
 
+	virtual int GetKeyCount( const std::string& key );
+
 private:
 	bool _Init();
     bool _IsValidKey(const StringArray& key);
