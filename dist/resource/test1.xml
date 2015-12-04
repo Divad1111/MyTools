@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ResourceVersion>
+    <!-- 补丁文件所在网址(不要修改,不要注释,请保持原样) -->
+    <PatchFilePos>http://xxx.xx</PatchFilePos>
+    <!--补丁文件路径(不要修改,不要注释,请保持原样) -->
+    <PatchFilePath>xxx/xxx/xxx</PatchFilePath>
+    <!-- 主干包配置信息开始============================================================================================-->
+    <!--版本更新 FromVersion=起始版本号 ToVersion=升级至某版本号(=Last表示后续没有版本) PatchFile=升级补丁文件 PatchFileMD5=补丁文件的MD5码 FileSize= 文件大小(字节)-->
+    <VersionBase desc="this is base version">
+        <FromVersion>2.0</FromVersion>
+        <ToVersion>1.0</ToVersion>
+        <PatchFile>http://192.168.1.200/Android/all/1.0=1.1</PatchFile>
+        <PatchFileMD5>fb9e7ac964b893e23c693e3934dc98f1</PatchFileMD5>
+        <FileSize>2000</FileSize>
+        <IsEnable>false</IsEnable>
+    </VersionBase>
+    <!--- 主干包配置信息完============================================================================================-->
+    <!-- 补丁包配置信息开始============================================================================================-->
+    <VersionPatch desc="this is VersionPatch.">
+        <FromVersion>1.0</FromVersion>
+        <ToVersion>1.1</ToVersion>
+        <PatchFile>http://192.168.1.200/Android/all/1.0=1.1</PatchFile>
+        <PatchFileMD5>93aa4b2b51ff4c2319d6c3826de78d88</PatchFileMD5>
+        <FileSize>156781</FileSize>
+    </VersionPatch>
+    <VersionPatch>
+        <FromVersion>1.1</FromVersion>
+        <ToVersion>1.2</ToVersion>
+        <PatchFile>http://192.168.1.200/Android/all/1.1=1.2</PatchFile>
+        <PatchFileMD5>18772e6cd704f0c78e93c7bc645d6366</PatchFileMD5>
+        <FileSize>356933</FileSize>
+    </VersionPatch>
+    <VersionPatch>
+        <FromVersion>1.2</FromVersion>
+        <ToVersion>1.3</ToVersion>
+        <PatchFile>http://192.168.1.200/Android/all/1.2=1.3</PatchFile>
+        <PatchFileMD5>904302ddf2a4279e121d008bfc530a5e</PatchFileMD5>
+        <FileSize>118075</FileSize>
+    </VersionPatch>
+    <VersionPatch>
+        <FromVersion>1.3</FromVersion>
+        <ToVersion>1.4</ToVersion>
+        <PatchFile>http://192.168.1.200/Android/all/1.3=1.4</PatchFile>
+        <PatchFileMD5>c8bf59e18b87fe9b2e7825b47d529f56</PatchFileMD5>
+        <FileSize>332082</FileSize>
+    </VersionPatch>
+    <VersionPatch>
+        <FromVersion>1.4</FromVersion>
+        <ToVersion>1.5</ToVersion>
+        <PatchFile>http://192.168.1.200/Android/all/1.4=1.5</PatchFile>
+        <PatchFileMD5>8b22a75e603df3b202ee304559fa797c</PatchFileMD5>
+        <FileSize>62168</FileSize>
+    </VersionPatch>
+    <VersionPatch>
+        <FromVersion>1.5</FromVersion>
+        <FromVersion desc="this is from version.">1.5.1</FromVersion>
+        <ToVersion>1.6</ToVersion>
+        <PatchFile>http://192.168.1.200/Android/all/1.5=1.6</PatchFile>
+        <PatchFileMD5>0cce43be00488bf1be6159407e9ee6f4</PatchFileMD5>
+        <FileSize>574154</FileSize>
+    </VersionPatch>
+    <!--- 补丁包配置信息完============================================================================================-->
+    <!--app版本和升级地址============================================================================================-->
+    <CodeVersion_last>
+        <Version>1.0.1</Version>
+        <url>http://192.168.1.200/Android/553/app/juexing_v1.0.2.apk</url>
+        <size>79992562</size>
+    </CodeVersion_last>
+    <!---秦姬app版本和升级地址完============================================================================================-->
+    <!--登陆服务器(不要修改,不要注释,请保持原样)-->
+    <loginSever>
+        <!--<login_Ip>183.61.86.149</login_Ip>-->
+        <!--<login_Port>64801</login_Port>-->
+        <login_Ip>192.168.1.10</login_Ip>
+        <login_Port>44801</login_Port>
+    </loginSever>
+    <!--网络协议版本号(不要修改,不要注释,请保持原样)-->
+    <net_protocol_version>1</net_protocol_version>
+</ResourceVersion>

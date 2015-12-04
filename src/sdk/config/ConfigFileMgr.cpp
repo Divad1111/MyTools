@@ -29,6 +29,7 @@ ConfigFileMgr* ConfigFileMgr::GetInstance()
 
 void ConfigFileMgr::Add( const std::string& strConfigName, const std::string& strFilePath, EConfigType eType)
 {
+	//输入条件检测
 	if (strConfigName.empty())
 	{
 		LOGE<<"strFileName is empty.";
@@ -45,6 +46,7 @@ void ConfigFileMgr::Add( const std::string& strConfigName, const std::string& st
 		return;
 	}
 
+	//根据类型创建配置文件对象
 	ConfigFile* pResultConfigFile = NULL;
 	if (eType == E_INI)	
 		pResultConfigFile = new IniConfigFile(strConfigName, strFilePath);	
@@ -52,6 +54,26 @@ void ConfigFileMgr::Add( const std::string& strConfigName, const std::string& st
 		pResultConfigFile = new XmlConfigFile(strConfigName, strFilePath);	
 	else	
 		LOGE<<"eType is unknow.";
+	
+	//插入对象到map中保存
+	DictConfigFile::iterator iterFinder = m_mapConfigFiles.find(strConfigName);
+	if (iterFinder != m_mapConfigFiles.end())
+	{
+		if (iterFinder->second != NULL)
+		{
+			if (iterFinder->second->GetFilePath() != strFilePath)
+			{
+				delete iterFinder->second;
+				iterFinder->second = pResultConfigFile;
+				return;
+			}
+			else
+			{
+				delete pResultConfigFile;
+				return;
+			}
+		}
+	}
 	
 	m_mapConfigFiles.insert( make_pair(strConfigName, pResultConfigFile) );
 }

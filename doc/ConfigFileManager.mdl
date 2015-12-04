@@ -11,7 +11,43 @@
 	(object Attribute
 	    tool       	"Java"
 	    name       	"IDE"
-	    value      	"Internal Editor"))
+	    value      	"Internal Editor")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagName1"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagText1"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagApply1"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagName2"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagText2"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagApply2"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagName3"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagText3"
+	    value      	"")
+	(object Attribute
+	    tool       	"Java"
+	    name       	"UserDefineTagApply3"
+	    value      	""))
     quid       	"561DCACC01AF"
     enforceClosureAutoLoad 	FALSE
     defaults   	(object defaults
@@ -122,7 +158,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@1
-			    location   	(1521, 540)
+			    location   	(1521, 537)
 			    fill_color 	13434879
 			    nlines     	1
 			    max_width  	296
@@ -133,7 +169,7 @@
 			fill_color 	13434879
 			quidu      	"561DCCC40172"
 			width      	314
-			height     	192
+			height     	198
 			annotation 	8
 			autoResize 	TRUE)
 		    (object ClassView "Class" "Logical View::ConfigFile::IniConfigFile" @2
@@ -152,7 +188,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@2
-			    location   	(1130, 940)
+			    location   	(1130, 937)
 			    fill_color 	13434879
 			    nlines     	1
 			    max_width  	302
@@ -163,7 +199,7 @@
 			fill_color 	13434879
 			quidu      	"561DCCCF0320"
 			width      	320
-			height     	192
+			height     	198
 			annotation 	8
 			autoResize 	TRUE)
 		    (object ClassView "Class" "Logical View::ConfigFile::XmlConfigFile" @3
@@ -182,7 +218,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@3
-			    location   	(1850, 949)
+			    location   	(1850, 946)
 			    fill_color 	13434879
 			    nlines     	1
 			    max_width  	348
@@ -193,7 +229,7 @@
 			fill_color 	13434879
 			quidu      	"561DCCDE00FF"
 			width      	366
-			height     	192
+			height     	198
 			annotation 	8
 			autoResize 	TRUE)
 		    (object InheritView "" @4
@@ -203,8 +239,8 @@
 			client     	@2
 			supplier   	@1
 			vertices   	(list Points
-			    (1373, 925)
-			    (1575, 718))
+			    (1377, 922)
+			    (1572, 721))
 			line_style 	0)
 		    (object InheritView "" @5
 			stereotype 	TRUE
@@ -213,8 +249,8 @@
 			client     	@3
 			supplier   	@1
 			vertices   	(list Points
-			    (1940, 934)
-			    (1752, 718))
+			    (1937, 931)
+			    (1754, 721))
 			line_style 	0)
 		    (object ClassView "Class" "Logical View::ConfigFile::ConfigFileMgr" @6
 			ShowCompartmentStereotypes 	TRUE
@@ -232,7 +268,7 @@
 			    default_color 	TRUE)
 			label      	(object ItemLabel
 			    Parent_View 	@6
-			    location   	(302, 546)
+			    location   	(302, 543)
 			    fill_color 	13434879
 			    nlines     	1
 			    max_width  	348
@@ -243,50 +279,10 @@
 			fill_color 	13434879
 			quidu      	"561DCC0E0202"
 			width      	366
-			height     	192
+			height     	198
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Logical View::ConfigFile::XmlParser" @7
-			ShowCompartmentStereotypes 	TRUE
-			IncludeAttribute 	TRUE
-			IncludeOperation 	TRUE
-			location   	(2665, 1028)
-			font       	(object Font
-			    size       	12
-			    face       	"Arial"
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@7
-			    location   	(2517, 946)
-			    fill_color 	13434879
-			    nlines     	1
-			    max_width  	296
-			    justify    	0
-			    label      	"XmlParser")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"561DCCEB01C1"
-			width      	314
-			height     	192
-			annotation 	8
-			autoResize 	TRUE)
-		    (object UsesView "" @8
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"561DCFE5024E"
-			client     	@3
-			supplier   	@7
-			vertices   	(list Points
-			    (2207, 1029)
-			    (2507, 1028))
-			line_style 	0)
-		    (object UsesView "" @9
+		    (object UsesView "" @7
 			font       	(object Font
 			    size       	12
 			    face       	"Arial"

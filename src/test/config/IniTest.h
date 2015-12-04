@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "config/ConfigFileMgr.h"
 
-#define IniFilePath "H:/Local/SDK/MyTools/dist/resource/test1.ini"
+#define IniFilePath "test1.ini"
 
 class IniTest :public testing::Test
 {

@@ -10,6 +10,7 @@
  **************************************************************/
 #include "Utility.h"
 #include <stdio.h>
+#include <ctype.h>
 
 #include "plog\Log.h"
 
@@ -30,4 +31,34 @@ bool Utility::FileIsExist(const std::string& strFilePath)
 		return true;
 	}
 }
+
+const std::string Utility::ToLower( const std::string& strSource )
+{
+	std::string strResult = "";
+	if (strSource.empty())
+		return strResult;
+
+	int nLen = strSource.length();
+	for (int i = 0; i < nLen; ++i)
+	{
+		strResult.push_back( tolower(strSource[i]) );
+	}
+	return strResult;
+}
+
+const std::string Utility::ToUpper( const std::string& strSource )
+{
+	std::string strResult = "";
+	if (strSource.empty())
+		return strResult;
+
+	int nLen = strSource.length();
+	for (int i = 0; i < nLen; ++i)
+	{
+		strResult.push_back( toupper(strSource[i]) );
+	}
+	return strResult;
+}
+
+
 

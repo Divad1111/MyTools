@@ -1,0 +1,13 @@
+﻿2015-12-04 13:04:34.082 ERROR [9072] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:04:38.801 ERROR [9072] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:06:22.408 ERROR [7444] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:06:53.073 ERROR [7444] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:07:26.560 ERROR [7404] [wmain@16] fffff
+2015-12-04 13:07:30.339 ERROR [7404] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:07:31.222 ERROR [7404] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:14:51.302 ERROR [1328] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:14:52.921 ERROR [1328] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:23:05.839 ERROR [6312] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:23:05.839 ERROR [6312] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:24:25.537 ERROR [6180] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17
+2015-12-04 13:24:25.537 ERROR [6180] [XmlConfigFile::XmlConfigFile@25] Init file is failed, error code:17

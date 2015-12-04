@@ -12,6 +12,7 @@
 
 #include <plog/Log.h>
 
+#include "common/Utility.h"
 
 
 XmlConfigFile::XmlConfigFile( const std::string& strName, const std::string& strFilePath ):
@@ -49,7 +50,8 @@ bool XmlConfigFile::GetBool( const std::string& key, bool bDefalut )
 		}
 		else
 		{
-			return pXmlElement->Value() == "true"?true:false;
+			const char* strXmlElement = pXmlElement->GetText();
+			return Utility::ToLower(strXmlElement != NULL ? strXmlElement : "")== "true"?true:false;
 		}
 	}
 	return bDefalut;
@@ -73,7 +75,7 @@ void XmlConfigFile::SetBool( const std::string& key, bool bValue )
 		}
 		else
 		{
-			pXmlElement->SetValue(bValue?"true":"false");
+			pXmlElement->SetText(bValue?"true":"false");
 		}
 	}
 }
@@ -96,7 +98,7 @@ long XmlConfigFile::GetInteger( const std::string& key, long nDefault )
 		}
 		else
 		{
-			return atol(pXmlElement->Value());
+			return atol(pXmlElement->GetText());
 		}
 	}
 	return nDefault;
@@ -122,7 +124,7 @@ void XmlConfigFile::SetInteger( const std::string& key, long nValue )
 		{
 			char buff[32] = {0};
 			_ltoa(nValue, buff, 10);
-			pXmlElement->SetValue(buff);
+			pXmlElement->SetText(buff);
 		}
 	}
 }
@@ -134,19 +136,21 @@ std::string XmlConfigFile::GetString( const std::string& key, const std::string&
 		LOGE<<"key is empty.";
 		return strDefault;
 	}
-
+	
 	tinyxml2::XMLElement* pXmlElement = _GetXmlNode(key);
 	if (pXmlElement != NULL)
-	{
+	{		
 		if (_IsAttribute(key))
 		{
 			std::string strAttrName = _GetAttributeName(key);
-			return pXmlElement->Attribute(strAttrName.c_str());
+			const char* strAttribue = pXmlElement->Attribute(strAttrName.c_str());
+			return strAttribue != NULL ? strAttribue : "";
 		}
 		else
-		{
-			return pXmlElement->Value();
-		}
+		{			
+			const char* strXmlElement = pXmlElement->GetText();
+			return strXmlElement != NULL ? strXmlElement : "";
+		}		
 	}
 	return strDefault;
 }
@@ -169,7 +173,7 @@ void XmlConfigFile::SetString( const std::string& key, const std::string& strVal
 		}
 		else
 		{			
-			pXmlElement->SetValue(strValue.c_str());
+			pXmlElement->SetText(strValue.c_str());
 		}
 	}
 }
@@ -192,11 +196,13 @@ int XmlConfigFile::GetKeyCount( const std::string& key )
 		}
 		else
 		{
-			nCount = 1;
+			nCount = 0;
 			StringArray elements = _Split(key, ELEMENT_SPLIT_CHAR);
-			if (NULL != pXmlElement->NextSiblingElement((*(--elements.end())).c_str()))
+			const char* strLastElement = (*(--elements.end())).c_str();
+			while(pXmlElement != NULL)
 			{
-				nCount++;
+				++nCount;
+				pXmlElement = pXmlElement->NextSiblingElement(strLastElement);
 			}
 		}
 	}
@@ -214,27 +220,35 @@ void XmlConfigFile::Flush()
 
 tinyxml2::XMLElement* XmlConfigFile::_GetXmlNode( const std::string& key )
 {
-	tinyxml2::XMLElement* pElement = m_xmlDoc.RootElement();
+	tinyxml2::XMLElement* pCurElement = m_xmlDoc.RootElement();
+	if (pCurElement == NULL)
+		return NULL;
 
 	StringArray elements = _Split(key, ELEMENT_SPLIT_CHAR);
+	tinyxml2::XMLElement* pTempElement = pCurElement;
 	for (StringArray::const_iterator iter = elements.begin(); iter != elements.end(); ++iter)
 	{
-		pElement = pElement->FirstChildElement((*iter).c_str());
-		if(pElement == NULL)
+		pTempElement = pTempElement->FirstChildElement((*iter).c_str());
+		if(pTempElement == NULL)
 		{			
 			StringArray sameElements =  _Split(*iter, ELEMENT_INDEX_SPLIT_CHAR);
 			if (sameElements.size() == 2)
 			{
 				std::string strEleName = sameElements[0];
-				pElement = pElement->FirstChildElement(strEleName.c_str());
-				if (pElement != NULL)
+				pTempElement = pCurElement->FirstChildElement(strEleName.c_str());
+				if (pTempElement != NULL)
 				{
 					int nEleNumber = atoi(sameElements[1].c_str());
 					for (int nNum = 2; nNum <= nEleNumber; ++nNum)
-					{
-						pElement = pElement->NextSiblingElement(strEleName.c_str());
+					{	
+						pTempElement = pTempElement->NextSiblingElement(strEleName.c_str());
 					}
-				}				
+					pCurElement = pTempElement;
+				}	
+				else
+				{
+					return NULL;
+				}
 			}
 			else
 			{
@@ -242,13 +256,17 @@ tinyxml2::XMLElement* XmlConfigFile::_GetXmlNode( const std::string& key )
 				if (attribute.size() == 2)
 				{
 					std::string strEleName = attribute[0];					
-					return pElement->FirstChildElement(strEleName.c_str());						
+					return pCurElement->FirstChildElement(strEleName.c_str());						
 				}	
 				return NULL;
 			}
 		}
+		else
+		{
+			pCurElement = pTempElement;
+		}
 	}
-	return pElement;
+	return pCurElement;
 }
 
 bool XmlConfigFile::_IsAttribute( const std::string& key )
