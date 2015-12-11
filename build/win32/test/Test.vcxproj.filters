@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\config">
+      <UniqueIdentifier>{a30dc861-92e1-4d9a-a842-0486ccfcf7a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\StateMachine">
+      <UniqueIdentifier>{53e2b4ab-c6d0-4537-9277-67b6d72b2926}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -25,10 +31,25 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\test\config\IniTest.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\config</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\src\test\config\XmlTest.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\config</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\test\state_machine\ParameterTest.h">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\test\state_machine\StateA.h">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\test\state_machine\StateB.h">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\test\state_machine\StateC.h">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\test\state_machine\StateMachineTest.h">
+      <Filter>Source Files\StateMachine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +58,18 @@
     </ClCompile>
     <ClCompile Include="Test.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\test\state_machine\StateA.cpp">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\test\state_machine\StateB.cpp">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\test\state_machine\StateC.cpp">
+      <Filter>Source Files\StateMachine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\test\state_machine\StateMachineTest.cpp">
+      <Filter>Source Files\StateMachine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

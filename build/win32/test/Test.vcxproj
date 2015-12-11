@@ -92,10 +92,19 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\src\test\config\IniTest.h" />
     <ClInclude Include="..\..\..\src\test\config\XmlTest.h" />
+    <ClInclude Include="..\..\..\src\test\state_machine\ParameterTest.h" />
+    <ClInclude Include="..\..\..\src\test\state_machine\StateA.h" />
+    <ClInclude Include="..\..\..\src\test\state_machine\StateB.h" />
+    <ClInclude Include="..\..\..\src\test\state_machine\StateC.h" />
+    <ClInclude Include="..\..\..\src\test\state_machine\StateMachineTest.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\test\state_machine\StateA.cpp" />
+    <ClCompile Include="..\..\..\src\test\state_machine\StateB.cpp" />
+    <ClCompile Include="..\..\..\src\test\state_machine\StateC.cpp" />
+    <ClCompile Include="..\..\..\src\test\state_machine\StateMachineTest.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Test.cpp" />
   </ItemGroup>

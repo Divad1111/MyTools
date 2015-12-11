@@ -16,6 +16,8 @@
 #include "IniConfigFile.h"
 #include "XmlConfigFile.h"
 
+BEGIN_NS_SDK
+
 ConfigFileMgr* ConfigFileMgr::m_pConfigMgr = NULL;
 
 ConfigFileMgr* ConfigFileMgr::GetInstance()
@@ -112,3 +114,4 @@ ConfigFile* ConfigFileMgr::GetConfigFile( const std::string& strConfigName )
 	return NULL;
 }
 
+END_NS_SDK

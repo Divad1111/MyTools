@@ -14,6 +14,7 @@
 
 #include "common/Utility.h"
 
+BEGIN_NS_SDK
 
 XmlConfigFile::XmlConfigFile( const std::string& strName, const std::string& strFilePath ):
 	ConfigFile(strName, strFilePath)
@@ -285,3 +286,5 @@ std::string XmlConfigFile::_GetAttributeName( const std::string& key )
 	else
 		return "";
 }
+
+END_NS_SDK

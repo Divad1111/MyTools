@@ -1,5 +1,6 @@
 #include "ConfigFile.h"
 
+BEGIN_NS_SDK
 
 ConfigFile::~ConfigFile()
 {
@@ -33,3 +34,5 @@ StringArray ConfigFile::_Split(const std::string& strSource, const char ch)
 
     return arrRet;
 }
+
+END_NS_SDK

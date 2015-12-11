@@ -1,5 +1,8 @@
+#include "common/CommonDef.h"
 #include "gtest/gtest.h"
 #include "config/ConfigFileMgr.h"
+
+US_NS_SDK;
 
 #define IniFilePath "test1.ini"
 

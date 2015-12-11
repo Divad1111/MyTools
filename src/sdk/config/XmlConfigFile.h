@@ -7,10 +7,14 @@
  * -------------------------------------------------------------
  * 修改记录 :
   日期       版本    作者    内容
- **************************************************************/
+ **************************************************************/\
+#pragma once 
+
 #include "ConfigFile.h"
 
 #include <xml/tinyxml2.h>
+
+BEGIN_NS_SDK
 
 class XmlConfigFile : public ConfigFile
 {
@@ -37,3 +41,5 @@ private:
 private:
 	tinyxml2::XMLDocument m_xmlDoc;
 };
+
+END_NS_SDK

@@ -102,6 +102,11 @@
     <ClInclude Include="..\..\..\src\sdk\externals\plog\Severity.h" />
     <ClInclude Include="..\..\..\src\sdk\externals\plog\Util.h" />
     <ClInclude Include="..\..\..\src\sdk\externals\xml\tinyxml2.h" />
+    <ClInclude Include="..\..\..\src\sdk\state_machine\Parameter.h" />
+    <ClInclude Include="..\..\..\src\sdk\state_machine\State.h" />
+    <ClInclude Include="..\..\..\src\sdk\state_machine\StateMachine.h" />
+    <ClInclude Include="..\..\..\src\sdk\state_machine\StateMachineProtocol.h" />
+    <ClInclude Include="..\..\..\src\sdk\state_machine\StateProtocol.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -114,6 +119,9 @@
     <ClCompile Include="..\..\..\src\sdk\externals\ini\ini.cpp" />
     <ClCompile Include="..\..\..\src\sdk\externals\ini\INIReader.cpp" />
     <ClCompile Include="..\..\..\src\sdk\externals\xml\tinyxml2.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\state_machine\Parameter.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\state_machine\State.cpp" />
+    <ClCompile Include="..\..\..\src\sdk\state_machine\StateMachine.cpp" />
     <ClCompile Include="dllmain.cpp">
       <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

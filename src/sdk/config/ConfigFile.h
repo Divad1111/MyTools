@@ -8,14 +8,14 @@
  * 修改记录 :
   日期       版本    作者    内容
  **************************************************************/
-#ifndef CONFIG_FILE_H_
-#define CONFIG_FILE_H_
+#pragma once
 
 #include <string>
 #include <vector>
 
 #include "common/CommonDef.h"
 
+BEGIN_NS_SDK
 
 //配置表类型
 enum EConfigType
@@ -71,5 +71,4 @@ private:
     EConfigType m_eConfigType;
 };
 
-
-#endif //CONFIG_FILE_H_
+END_NS_SDK

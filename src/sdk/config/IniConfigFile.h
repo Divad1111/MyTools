@@ -8,13 +8,13 @@
  * 修改记录 :
   日期       版本    作者    内容
  **************************************************************/
-#ifndef INI_CONFIG_FILE_H_
-#define INI_CONFIG_FILE_H_
+#pragma once
 
 #include "ConfigFile.h"
 
-
 class INIReader;
+
+BEGIN_NS_SDK
 
 class IniConfigFile : public ConfigFile
 {
@@ -38,4 +38,4 @@ private:
     INIReader*   m_pIniReader;
 };
 
-#endif//INI_CONFIG_FILE_H_
+END_NS_SDK

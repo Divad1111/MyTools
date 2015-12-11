@@ -27,6 +27,9 @@
     <Filter Include="源文件\common">
       <UniqueIdentifier>{20e4f853-fc79-42e4-817d-45ad26c02769}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\state_machine">
+      <UniqueIdentifier>{2e3ddb5e-ac9c-4407-8d23-4286763a74d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -86,6 +89,21 @@
     <ClInclude Include="..\..\..\src\sdk\common\Utility.h">
       <Filter>源文件\common</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\state_machine\Parameter.h">
+      <Filter>源文件\state_machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\state_machine\State.h">
+      <Filter>源文件\state_machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\state_machine\StateMachine.h">
+      <Filter>源文件\state_machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\state_machine\StateMachineProtocol.h">
+      <Filter>源文件\state_machine</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\sdk\state_machine\StateProtocol.h">
+      <Filter>源文件\state_machine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -120,6 +138,15 @@
     </ClCompile>
     <ClCompile Include="..\..\..\src\sdk\common\Utility.cpp">
       <Filter>源文件\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\state_machine\Parameter.cpp">
+      <Filter>源文件\state_machine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\state_machine\StateMachine.cpp">
+      <Filter>源文件\state_machine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\sdk\state_machine\State.cpp">
+      <Filter>源文件\state_machine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

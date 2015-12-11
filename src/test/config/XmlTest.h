@@ -1,6 +1,8 @@
 #include "gtest/gtest.h"
 #include "config/ConfigFileMgr.h"
 
+US_NS_SDK;
+
 #define XmlFilePath "test1.xml"
 
 class XmlTest :public testing::Test

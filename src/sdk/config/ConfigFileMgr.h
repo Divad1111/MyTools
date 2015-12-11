@@ -9,10 +9,13 @@
   日期       版本    作者    内容
  **************************************************************/
 #pragma once
+
 #include <string>
 #include <map>
 #include <utility>
 #include "ConfigFile.h"
+
+BEGIN_NS_SDK
 
 class ConfigFile;
 
@@ -32,3 +35,5 @@ private:
 	typedef std::map<std::string, ConfigFile*> DictConfigFile;
 	DictConfigFile m_mapConfigFiles;
 };
+
+END_NS_SDK

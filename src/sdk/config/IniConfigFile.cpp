@@ -13,6 +13,8 @@
 #include <ini/INIReader.h>
 #include <plog/Log.h>
 
+BEGIN_NS_SDK
+
 IniConfigFile::IniConfigFile( const std::string& strName, const std::string& strFilePath ):
 	ConfigFile(strName, strFilePath)
 {	
@@ -131,3 +133,4 @@ bool IniConfigFile::_IsValidKey(const StringArray& key)
     return true;
 }
 
+END_NS_SDK
