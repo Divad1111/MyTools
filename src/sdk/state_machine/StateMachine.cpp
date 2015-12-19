@@ -6,11 +6,6 @@
 BEGIN_NS_SDK
 
 
-StateMachine* StateMachine::CreateStateMachine()
-{
-	return new StateMachine();
-}
-
 StateMachine::StateMachine():	
 	m_pCurState(nullptr),
 	m_pCallbackProtocol(nullptr),
@@ -107,5 +102,7 @@ void StateMachine::OnEnd()
 	if (m_pCallbackProtocol != nullptr)
 		m_pCallbackProtocol->OnEnd();
 }
+
+
 
 END_NS_SDK

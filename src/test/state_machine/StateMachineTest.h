@@ -19,7 +19,7 @@ using namespace Sdk;
 class StateMachineTest : public StateMachine
 {
 public:
-	static StateMachine* CreateStateMachine(){return new StateMachineTest();}
+	StateMachineTest(){}
 protected:
 	virtual void OnStart() 
 	{

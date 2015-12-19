@@ -12,19 +12,16 @@ class State;
 class StateMachine : public StateMachineProtocol
 {
 public:
-	static StateMachine* CreateStateMachine();
+	StateMachine();
 	virtual ~StateMachine();
 	void AddState(State* pState);
 	Parameter& GetParam() { return m_oParameter; }
 	void SetParam(Parameter val) { m_oParameter = val; }
 	State* GetDefaultState() const { return m_pCurState; }
-	void SetDefaultState(State* val);
-	State* GetCurState() { return m_pCurState; }
+	void SetDefaultState(State* val);	
 	void SetCallbackProtocol(StateMachineProtocol* val) { m_pCallbackProtocol = val; }
 	void Update(float dt);
 
-protected:
-	StateMachine();
 protected:	
 	virtual void OnStart();
 	virtual void OnUpdate(float dt);

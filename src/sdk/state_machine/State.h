@@ -26,8 +26,8 @@ protected:
 	virtual void OnUpdate(float dt);
 	virtual void OnExit();
 protected:
-	int				m_nStateId;
-	Parameter*		m_pParam;	//析构的时候不用删除，此对象存在于状态机对象中，不要销毁它。
+	int					m_nStateId;
+	Parameter*			m_pParam;	//析构的时候不用删除，此对象存在于状态机对象中，不要销毁它。
 };
 
 END_NS_SDK

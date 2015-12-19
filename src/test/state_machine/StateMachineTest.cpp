@@ -10,11 +10,13 @@
 
 
 
+
+
 TEST(StateMachineTest, StateCircle)
 {
-	auto pStateMachine = StateMachineTest::CreateStateMachine();
+	auto pStateMachine = StateMachineTest();
 	while (true)
 	{
-		pStateMachine->Update(10);
+		pStateMachine.Update(10);
 	}
 }
