@@ -40,8 +40,14 @@ bool XmlConfigFile::GetBool( const std::string& key, bool bDefalut )
 		LOGE<<"key is empty.";
 		return bDefalut;
 	}
+	tinyxml2::XMLNode* pNode = _GetXmlNode(key);
+	if (pNode == nullptr)
+	{
+		LOGE<<"pNode is null.";
+		return bDefalut;
+	}
 
-	tinyxml2::XMLElement* pXmlElement = _GetXmlNode(key);
+	tinyxml2::XMLElement* pXmlElement = pNode->ToElement();
 	if (pXmlElement != NULL)
 	{
 		if (_IsAttribute(key))
@@ -65,8 +71,14 @@ void XmlConfigFile::SetBool( const std::string& key, bool bValue )
 		LOGE<<"key is empty.";
 		return;
 	}
+	tinyxml2::XMLNode* pNode = _GetXmlNode(key);
+	if (pNode == nullptr)
+	{
+		LOGE<<"pNode is null.";
+		return ;
+	}
 
-	tinyxml2::XMLElement* pXmlElement = _GetXmlNode(key);
+	tinyxml2::XMLElement* pXmlElement = pNode->ToElement();
 	if (pXmlElement != NULL)
 	{
 		if (_IsAttribute(key))
@@ -88,8 +100,14 @@ long XmlConfigFile::GetInteger( const std::string& key, long nDefault )
 		LOGE<<"key is empty.";
 		return nDefault;
 	}
+	tinyxml2::XMLNode* pNode = _GetXmlNode(key);
+	if (pNode == nullptr)
+	{
+		LOGE<<"pNode is null.";
+		return nDefault;
+	}
 
-	tinyxml2::XMLElement* pXmlElement = _GetXmlNode(key);
+	tinyxml2::XMLElement* pXmlElement = pNode->ToElement();
 	if (pXmlElement != NULL)
 	{
 		if (_IsAttribute(key))
@@ -112,8 +130,14 @@ void XmlConfigFile::SetInteger( const std::string& key, long nValue )
 		LOGE<<"key is empty.";
 		return;
 	}
+	tinyxml2::XMLNode* pNode = _GetXmlNode(key);
+	if (pNode == nullptr)
+	{
+		LOGE<<"pNode is null.";
+		return ;
+	}
 
-	tinyxml2::XMLElement* pXmlElement = _GetXmlNode(key);
+	tinyxml2::XMLElement* pXmlElement = pNode->ToElement();
 	if (pXmlElement != NULL)
 	{
 		if (_IsAttribute(key))
@@ -137,8 +161,14 @@ std::string XmlConfigFile::GetString( const std::string& key, const std::string&
 		LOGE<<"key is empty.";
 		return strDefault;
 	}
-	
-	tinyxml2::XMLElement* pXmlElement = _GetXmlNode(key);
+	tinyxml2::XMLNode* pNode = _GetXmlNode(key);
+	if (pNode == nullptr)
+	{
+		LOGE<<"pNode is null.";
+		return strDefault;
+	}
+
+	tinyxml2::XMLElement* pXmlElement = pNode->ToElement();
 	if (pXmlElement != NULL)
 	{		
 		if (_IsAttribute(key))
@@ -163,8 +193,14 @@ void XmlConfigFile::SetString( const std::string& key, const std::string& strVal
 		LOGE<<"key is empty.";
 		return;
 	}
+	tinyxml2::XMLNode* pNode = _GetXmlNode(key);
+	if (pNode == nullptr)
+	{
+		LOGE<<"pNode is null.";
+		return ;
+	}
 
-	tinyxml2::XMLElement* pXmlElement = _GetXmlNode(key);
+	tinyxml2::XMLElement* pXmlElement = pNode->ToElement();
 	if (pXmlElement != NULL)
 	{
 		if (_IsAttribute(key))
@@ -187,8 +223,14 @@ int XmlConfigFile::GetKeyCount( const std::string& key )
 		LOGE<<"key is empty.";
 		return nCount;
 	}
+	tinyxml2::XMLNode* pNode = _GetXmlNode(key);
+	if (pNode == nullptr)
+	{
+		LOGE<<"pNode is null.";
+		return nCount;
+	}
 
-	tinyxml2::XMLElement* pXmlElement = _GetXmlNode(key);
+	tinyxml2::XMLElement* pXmlElement = pNode->ToElement();	
 	if (pXmlElement != NULL)
 	{
 		if (_IsAttribute(key))
@@ -219,14 +261,14 @@ void XmlConfigFile::Flush()
 	}
 }
 
-tinyxml2::XMLElement* XmlConfigFile::_GetXmlNode( const std::string& key )
+tinyxml2::XMLNode* XmlConfigFile::_GetXmlNode( const std::string& key )
 {
-	tinyxml2::XMLElement* pCurElement = m_xmlDoc.RootElement();
+	tinyxml2::XMLNode* pCurElement = m_xmlDoc.GetDocument();
 	if (pCurElement == NULL)
 		return NULL;
 
 	StringArray elements = _Split(key, ELEMENT_SPLIT_CHAR);
-	tinyxml2::XMLElement* pTempElement = pCurElement;
+	tinyxml2::XMLNode* pTempElement = pCurElement;
 	for (StringArray::const_iterator iter = elements.begin(); iter != elements.end(); ++iter)
 	{
 		pTempElement = pTempElement->FirstChildElement((*iter).c_str());

@@ -28,52 +28,52 @@ TEST_F(XmlTest, ReadConfigBasicInfo)
 	ConfigFile* pIniFile = m_pConfigFileMgr->GetConfigFile("test1");
 	ASSERT_STREQ("test1",pIniFile->GetName().c_str());
 	ASSERT_STREQ(XmlFilePath, pIniFile->GetFilePath().c_str());
-	EXPECT_EQ(0,pIniFile->GetKeyCount("server"));
+	EXPECT_EQ(0,pIniFile->GetKeyCount("ResourceVersion:server"));
 	EXPECT_EQ(E_XML, pIniFile->GetType());
 }
 
 TEST_F(XmlTest, ReadConfigContent)
 {
 	ConfigFile* pIniFile = m_pConfigFileMgr->GetConfigFile("test1");
-	EXPECT_STREQ("this is base version", pIniFile->GetString("VersionBase.desc", "").c_str())<<pIniFile->GetString("VersionBase.desc", "12323");
-	pIniFile->SetString("VersionBase:FromVersion", "2.0");
+	EXPECT_STREQ("this is base version", pIniFile->GetString("ResourceVersion:VersionBase.desc", "").c_str())<<pIniFile->GetString("ResourceVersion:VersionBase.desc", "12323");
+	pIniFile->SetString("ResourceVersion:VersionBase:FromVersion", "2.0");
 	pIniFile->Flush();
-	EXPECT_STREQ("2.0", pIniFile->GetString("VersionBase:FromVersion", "").c_str());
-	EXPECT_STREQ("1.0", pIniFile->GetString("VersionBase:ToVersion", "").c_str());
-	EXPECT_STREQ("", pIniFile->GetString("VersionBase:ToVersion1", "").c_str());
-	EXPECT_STREQ("http://192.168.1.200/Android/all/1.0=1.1", pIniFile->GetString("VersionBase:PatchFile", "").c_str())<<pIniFile->GetString("VersionBase:PatchFile", "");
-	EXPECT_STREQ("1.5", pIniFile->GetString("VersionPatch_6:FromVersion", "").c_str());
-	EXPECT_STREQ("this is from version.", pIniFile->GetString("VersionPatch_6:FromVersion_2.desc", "").c_str());
-	EXPECT_STREQ("1.0", pIniFile->GetString("VersionPatch:FromVersion", "").c_str());
-	EXPECT_STREQ("", pIniFile->GetString("VersionPatch.desc:ToVersion", "").c_str());
+	EXPECT_STREQ("2.0", pIniFile->GetString("ResourceVersion:VersionBase:FromVersion", "").c_str());
+	EXPECT_STREQ("1.0", pIniFile->GetString("ResourceVersion:VersionBase:ToVersion", "").c_str());
+	EXPECT_STREQ("", pIniFile->GetString("ResourceVersion:VersionBase:ToVersion1", "").c_str());
+	EXPECT_STREQ("http://192.168.1.200/Android/all/1.0=1.1", pIniFile->GetString("ResourceVersion:VersionBase:PatchFile", "").c_str())<<pIniFile->GetString("ResourceVersion:VersionBase:PatchFile", "");
+	EXPECT_STREQ("1.5", pIniFile->GetString("ResourceVersion:VersionPatch_6:FromVersion", "").c_str());
+	EXPECT_STREQ("this is from version.", pIniFile->GetString("ResourceVersion:VersionPatch_6:FromVersion_2.desc", "").c_str());
+	EXPECT_STREQ("1.0", pIniFile->GetString("ResourceVersion:VersionPatch:FromVersion", "").c_str());
+	EXPECT_STREQ("", pIniFile->GetString("ResourceVersion:VersionPatch.desc:ToVersion", "").c_str());
 
 	//EXPECT_EQ(19868, pIniFile->GetInteger("VersionBase:FileSize", 0));
-	pIniFile->SetInteger("VersionBase:FileSize", 2000);
+	pIniFile->SetInteger("ResourceVersion:VersionBase:FileSize", 2000);
 	pIniFile->Flush();
-	EXPECT_EQ(2000, pIniFile->GetInteger("VersionBase:FileSize", 0) );
+	EXPECT_EQ(2000, pIniFile->GetInteger("ResourceVersion:VersionBase:FileSize", 0) );
 
 
-	int nCount = pIniFile->GetKeyCount("VersionPatch");
+	int nCount = pIniFile->GetKeyCount("ResourceVersion:VersionPatch");
 	for (int i = 1; i <= nCount; ++i)
 	{
 		char buff[256] = {0};
-		sprintf(buff, "VersionPatch_%d:FromVersion", i);
+		sprintf(buff, "ResourceVersion:VersionPatch_%d:FromVersion", i);
 		std::string strFrom(buff);
 		memset(buff,0, 256);
 
-		sprintf(buff, "VersionPatch_%d:ToVersion", i);
+		sprintf(buff, "ResourceVersion:VersionPatch_%d:ToVersion", i);
 		std::string strTo(buff);
 		memset(buff,0, 256);
 
-		sprintf(buff, "VersionPatch_%d:PatchFile", i);
+		sprintf(buff, "ResourceVersion:VersionPatch_%d:PatchFile", i);
 		std::string strPatchFile(buff);
 		memset(buff,0, 256);
 
-		sprintf(buff, "VersionPatch_%d:PatchFileMD5", i);
+		sprintf(buff, "ResourceVersion:VersionPatch_%d:PatchFileMD5", i);
 		std::string strPatchFileMD5(buff);
 		memset(buff,0, 256);
 
-		sprintf(buff, "VersionPatch_%d:FileSize", i);
+		sprintf(buff, "ResourceVersion:VersionPatch_%d:FileSize", i);
 		std::string strFileSize(buff);
 		
 

@@ -8,15 +8,12 @@
 
 #include "gtest/gtest.h"
 
-
-
-
-
 TEST(StateMachineTest, StateCircle)
 {
 	auto pStateMachine = StateMachineTest();
-	while (true)
+	/*while (true)
 	{
-		pStateMachine.Update(10);
-	}
+	pStateMachine.Update(10);
+	}*/
 }
+

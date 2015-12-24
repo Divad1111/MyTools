@@ -62,9 +62,16 @@ void StateMachine::Update( float dt )
 	if (m_bIsFirstUpdate)
 	{
 		OnStart();
+		OnUpdate(dt);
 		m_bIsFirstUpdate = false;
+
+		if (m_pCurState != nullptr)
+			m_pCurState->OnEnter();
 	}
-	OnUpdate(dt);
+	else
+	{
+		OnUpdate(dt);
+	}
 	
 	//检查状态的改变，并回调相应的函数
 	if (m_pCurState != nullptr)

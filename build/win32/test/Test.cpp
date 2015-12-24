@@ -7,7 +7,7 @@
 #include "gtest/gtest.h"
 #include "plog/Log.h"
 
-#define STATE_MACHINE
+//#define STATE_MACHINE
 #define CONFIG_FILE
 
 //≈‰÷√∂¡»°≤‚ ‘
@@ -22,7 +22,7 @@
 #include "state_machine/StateA.h"
 #include "state_machine/StateB.h"
 #include "state_machine/StateC.h"
-#include "state_machine/StateMachineTest.h"
+#include "state_machine/StateMachineTest.cpp"
 #endif
 
 

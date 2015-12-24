@@ -46,3 +46,4 @@ protected:
 		std::cout<<"The state machine is end."<<std::endl;
 	}
 };
+

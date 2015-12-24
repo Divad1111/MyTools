@@ -35,7 +35,7 @@ public:
 	virtual void Flush();
 
 private:
-	tinyxml2::XMLElement* _GetXmlNode(const std::string& key);
+	tinyxml2::XMLNode* _GetXmlNode(const std::string& key);
 	bool _IsAttribute(const std::string& key);
 	std::string _GetAttributeName(const std::string& key);
 private:
