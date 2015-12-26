@@ -19,7 +19,7 @@ public:
 	void SetParam(Parameter val) { m_oParameter = val; }
 	State* GetDefaultState() const { return m_pCurState; }
 	void SetDefaultState(State* val);	
-	void SetCallbackProtocol(StateMachineProtocol* val) { m_pCallbackProtocol = val; }
+	void SetCallbackProtocol(StateMachineProtocol* val);
 	void Update(float dt);
 
 protected:	

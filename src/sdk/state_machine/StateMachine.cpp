@@ -110,6 +110,12 @@ void StateMachine::OnEnd()
 		m_pCallbackProtocol->OnEnd();
 }
 
+void StateMachine::SetCallbackProtocol( StateMachineProtocol* val )
+{
+	SAFE_DEL(m_pCallbackProtocol);
+	m_pCallbackProtocol = val;
+}
+
 
 
 END_NS_SDK
